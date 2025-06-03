@@ -19,3 +19,13 @@ GENERATE_INFO = """Tu tarea es generar un guion atractivo y dinámico para un **
 ** No incluir emojis en tu respuesta**
 **Importante:** Usa un lenguaje que conecte con la Gen Z y Millennials. ¡Hazlo viral!  
 Tu respuesta debe estar en el siguiente formato.\n{format_instructions}\n"""
+
+
+
+
+HALLUCINATION_PROMPT = """Tu tares es validar que la respuesta sea congruente con el contexto 
+
+La respuesta es : {response}
+el contexto es :{context}
+ 
+Tu respuesta debe estar en el siguiente formato.\n{format_instructions}\n"""
