@@ -68,3 +68,29 @@ class ImageGridDescriber:
     
 # TODO : Add a class to change the vision model used 
 
+
+
+    def get_image_description_llama_model(self, concatenated_image):
+        base64_image = self.encode_image(concatenated_image)
+
+        completion = self.client.chat.completions.create(
+            model=self.vision_model,
+            messages=[
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "text", "text": "Describe el producto en la imagen."},
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": f"data:image/jpeg;base64,{base64_image}"
+                            },
+                        },
+                    ],
+                }
+            ],
+            temperature=1,
+            max_completion_tokens=1024,
+        )
+
+        return completion.choices[0].message.content
