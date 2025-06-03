@@ -64,6 +64,9 @@ class ImageGridDescriber:
         )
 
         return completion.choices[0].message.content
+    
+    
+# TODO : Add a class to change the vision model used 
 
 
 

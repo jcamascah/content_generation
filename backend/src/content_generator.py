@@ -91,3 +91,6 @@ class ContentGenerator:
         return self.apply_tone(
             generate_text["text"]["content"], new_target_audience, new_tone, language
         )
+
+
+#TODO Add hallucination node to detect if there is responses generated with haluccination
